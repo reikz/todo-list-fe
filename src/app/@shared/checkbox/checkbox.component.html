@@ -1,0 +1,19 @@
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" name="checkbox-{{stamp}}" id="checkbox-{{stamp}}" [formControl]="control" [value]="value">
+  <ng-container *ngIf="!!tooltipMsg; else noToolTip">
+    <label class="form-check-label w-100" for="checkbox-{{stamp}}">
+      <span class="d-inline-block" *ngIf="label" [class.text-muted]="control.disabled" [class.strong]="strongLabel"
+            [ngbTooltip]="tooltip" placement="right">{{label}}</span>
+    </label>
+  </ng-container>
+  <ng-template #noToolTip>
+    <label class="form-check-label w-100" for="checkbox-{{stamp}}">
+      <span class="d-block" *ngIf="label" [class.text-muted]="control.disabled" [class.strong]="strongLabel">{{label}}</span>
+    </label>
+  </ng-template>
+</div>
+<ng-template #tooltip>
+  <i class="fa fa-info-circle"></i>
+  <span>{{tooltipMsg}}</span>
+</ng-template>
+<ng-content></ng-content>

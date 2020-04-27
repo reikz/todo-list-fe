@@ -1,0 +1,36 @@
+{
+  "APP_NAME": "TODO List",
+  "About": "About",
+  "Hello world !": "Hello world !",
+  "Todo": "Todo app",
+  "Logged in as": "Logged in as",
+  "Login": "Login",
+  "Logout": "Logout",
+  "Password": "Password",
+  "Password is required": "Password is required",
+  "Username": "Username",
+  "Username is required": "Username is required",
+  "Username or password incorrect.": "Username or password incorrect.",
+  "Remember me": "Remember me",
+  "Version": "Version",
+  "RegisterUser": "Register User",
+  "todo": {
+    "createNewProject": "Create new project",
+    "project": {
+      "todo": "To Do",
+      "done": "Done"
+    },
+    "taskEndingDate": "Ends in {{date}}",
+    "btn": {
+      "createProject": "Create project",
+      "addTask": "Add"
+    },
+    "placeholder": {
+      "projectName": "Project name",
+      "task": "Task"
+    }
+  },
+  "create-user": {
+    "title": "Create user"
+  }
+}

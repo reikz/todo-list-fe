@@ -1,0 +1,68 @@
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 m-0">
+  <div class="col" *ngFor="let project of projects">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between">
+        <span>{{project.name}}</span>
+        <div>
+          <i class="fa fa-pencil-alt pointer" (click)="editProjectName()"></i>
+          <i class="fa fa-trash-alt pl-2 pointer" (click)="deleteProject()"></i>
+        </div>
+      </div>
+      <div class="card-body p-3">
+        <ng-container *ngIf="project.tasks && project.tasks.length > 0">
+          <h5 translate>todo.project.todo</h5>
+
+          <ng-container *ngFor="let task of project.tasks">
+           <div class="d-flex align-items-center">
+             <todo-checkbox  [control]="task.ui.formControl" [label]="task.name"
+                             [tooltipMsg]="task.ui.translateTerminationDate">
+             </todo-checkbox>
+             <i class="fa fa-trash-alt pl-2 pointer" (click)="deleteTask(task)"></i>
+           </div>
+          </ng-container>
+
+          <h5 class="pt-2" translate>todo.project.done</h5>
+        </ng-container>
+
+        <hr>
+        <div class="row">
+          <div class="col-8">
+            <input type="text" class="form-control input-group-append"
+                   [placeholder]="'todo.placeholder.task' | translate" [(ngModel)]="newTaskName">
+          </div>
+          <div class="col-4">
+            <button
+              class="btn btn-success w-100"
+              (click)="addTask(project.id)"
+              translate>todo.btn.addTask
+            </button>
+          </div>
+      </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="jumbotron text-center">
+      <h2 class="mb-3" translate>todo.createNewProject</h2>
+      <div>
+        <input type="text" class="form-control input-group-append mb-3"
+               [placeholder]="'todo.placeholder.projectName' | translate" [(ngModel)]="newProjectName">
+        <button
+          class="btn btn-info w-100"
+          (click)="createProject()"
+          translate>todo.btn.createProject
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
