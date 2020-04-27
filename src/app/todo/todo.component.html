@@ -15,7 +15,7 @@
           <ng-container *ngFor="let task of project.tasks">
            <div class="d-flex align-items-center">
              <todo-checkbox  [control]="task.ui.formControl" [label]="task.name"
-                             [tooltipMsg]="task.ui.translateTerminationDate">
+                             [tooltipMsg]="task.name || task.ui.translateTerminationDate">
              </todo-checkbox>
              <i class="fa fa-trash-alt pl-2 pointer" (click)="deleteTask(task)"></i>
            </div>
